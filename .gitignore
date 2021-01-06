@@ -1,0 +1,6 @@
+
+dist/
+
+.aws-sam
+
+node_modules/

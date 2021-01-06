@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+    sample
+
+    Sample SAM Template for sample
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+    Function:
+        Timeout: 300
+        Environment:
+            Variables:
+                IS_LOCAL_STACK: "true"
+                S3_BUCKET: "test-bucket"
+
+Resources:
+    HelloWorldFunction:
+        Type: AWS::Serverless::Function
+        Properties:
+            PackageType: Image
+            Events:
+                HelloWorld:
+                    Type: Api
+                    Properties:
+                        Path: /hello
+                        Method: get
+        Metadata:
+            DockerTag: nodejs12.x-v1
+            DockerContext: ./helloWorld
+            Dockerfile: Dockerfile

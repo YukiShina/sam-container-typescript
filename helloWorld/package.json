@@ -1,0 +1,30 @@
+{
+    "name": "hello-world",
+    "version": "1.0.0",
+    "description": "sample for NodeJS",
+    "main": "app.ts",
+    "author": "SAM CLI",
+    "license": "MIT",
+    "dependencies": {
+        "axios": "^0.18.0",
+        "chrome-aws-lambda": "^5.5.0",
+        "puppeteer-core": "^5.5.0"
+    },
+    "scripts": {
+        "prebuild": "mkdir ./dist || true",
+        "build-watch": "npm run prebuild && tsc -w --preserveWatchOutput true",
+        "build": "npm run prebuild && tsc",
+        "test": "mocha --require ts-node/register ./test/*.ts"
+    },
+    "devDependencies": {
+        "@types/chai": "^4.2.12",
+        "@types/mocha": "^5.2.7",
+        "@types/node": "^10.17.28",
+        "chai": "^4.1.2",
+        "cpx": "^1.5.0",
+        "mkdirp": "^0.5.5",
+        "mocha": "^5.1.1",
+        "ts-node": "^8.10.2",
+        "typescript": "^3.9.7"
+    }
+}
